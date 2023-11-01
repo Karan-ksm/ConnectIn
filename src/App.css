@@ -1,38 +1,245 @@
+body {
+  background-color: #282c34;
+}
+
 .App {
   text-align: center;
+  max-width: 728px;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App header {
+  background-color: #C4A484;
+  height: 10vh;
+  min-height: 50px;
+  color: #181717;
+  position: fixed;
+  width: 100%;
+  max-width: 728px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App section {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  background-color: #3E3D3D;
+}
+
+main {
+  padding: 10px;
+  height: 80vh;
+  margin: 10vh 0 10vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+main::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+main::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+main::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+form {
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  max-width: 728px;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+form button {
+  width: 20%;
+  background-color: #3E3D3D;
+}
+
+
+input {
+  line-height: 1.5;
+  width: 100%;
+  font-size: 1.5rem;
+  background: #C4A484;
+  color: #3E3D3D;
+  outline: none;
+  border: none;
+  padding: 0 10px;
+}
+
+button {
+  background-color: #282c34; /* Green */
+  border: none;
+  color: #C4A484;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+.sign-in {
+  color: #C4A484;
+  background: #282c34;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+.sign-out {
+  background-color: #282c34;
+  border: none;
+  color: #C4A484;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.25rem;
+  border-radius: 25px;
+}
+
+
+ul, li {
+  text-align: left;
+  list-style: none;
+}
+
+p {
+  max-width: 500px;
+  margin-bottom: 12px;
+  line-height: 24px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  position: center ;
   color: white;
+  text-align: center;
+}
+.Rules{
+  max-width: 500px;
+  margin: 0 auto; /* Center the element horizontally */
+  margin-bottom: 12px;
+  line-height: 24px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: white;
+  text-align: center; /* Center the text within the element */
 }
 
-.App-link {
-  color: #61dafb;
+.message {
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.sent {
+  flex-direction: row-reverse;
+}
+
+.sent p {
+  color: white;
+  background: #282c34;
+  align-self: flex-end;
+}
+.received p {
+  background: #e5e5ea;
+  color: black;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 2px 5px;
+}
+
+.connect-logo {
+  width: 120px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 2px 5px;
+  margin-left: 40px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px; 
+}
+
+
+.dropdown-button {
+  background-color: #C4A484;
+  color: #C4A484;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+.submit {
+  font-weight: bold;
+}
+
+
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #C4A484;
+  border: 1px solid #282c34;
+  border-top: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 25px;
+}
+
+
+
+.dropdown-list li {
+  padding: 10px 15px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.2s; 
+}
+
+.dropdown-list li:hover {
+  background-color: #282c34; 
+  color: #C4A484;
+}
+
+.dropdown-list.hidden {
+  display: none;
+}
+
+
+.dropdown.active .dropdown-list {
+  display: block;
 }
